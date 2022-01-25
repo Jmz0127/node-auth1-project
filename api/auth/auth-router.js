@@ -28,7 +28,7 @@ const { checkUsernameFree, checkUsernameExists, checkPasswordLength } = require(
   }
  */
 
-router.post('/register', checkPasswordLength, checkUsernameFree, (req, res, next) => {
+router.post('/register', checkPasswordLength, checkUsernameFree,   (req, res, next) => {
 	const { username, password } = req.body;
 	const hash = bcrypt.hashSync(password, 8); // 2 to the 8th power
 
